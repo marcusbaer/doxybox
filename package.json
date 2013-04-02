@@ -5,12 +5,9 @@
 	"homepage": "http://github.com/marcusbaer/doxybox",
     "keywords": ["document management", "web framework", "framework", "stylus"],
 	"author": "Marcus Baer <info@baer-media.com>",
-	"maintainers": [
-		"name": "Marcus Baer <info@baer-media.com>"
-	],
 	"repository": {
 		"type": "git",
-		"url": http://github.com/marcusbaer/doxybox.git"
+		"url": "http://github.com/marcusbaer/doxybox.git"
 	},
 	"bugs": {
 		"url": "https://github.com/marcusbaer/doxybox/issues"
@@ -36,10 +33,11 @@
 		"nodemailer": "~0.4.1",
 		"socket.io": ">=0.9.14",
 		"request": "~2.16.6",
-		"stylus": ">=0.32.1"
+		"stylus": ">=0.32.1",
+		"node-sprite": ">=0.1.2"
 	},
 	"bin": {
-		"doxybox": "./bin/doxybox",
+		"doxybox": "./bin/doxybox"
 	},
 	"main": "./doxybox.js"
 }
