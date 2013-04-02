@@ -4,26 +4,25 @@
 ], function (_, $, Backbone) {
     "use strict";
 
-    var SmarthomeModels = {};
+    var Models = {};
 
-    var Device = SmarthomeModels.Device = Backbone.Model.extend({
+    var Foo = Models.Foo = Backbone.Model.extend({
         defaults: {
             name: '<unknown>',
-            type: null,
             id: null
         }
     });
 
-    SmarthomeModels.DeviceList = Backbone.Collection.extend({
-        model: Device,
+    Models.FooList = Backbone.Collection.extend({
+        model: Foo,
         getList: function (id) {
             return this.toJSON();
         },
-        addDevice: function (attrs) {
-            this.push(new Device(attrs));
+        addFoo: function (attrs) {
+            this.push(new Foo(attrs));
         }
     });
 
-    return SmarthomeModels;
+    return Models;
 
 });

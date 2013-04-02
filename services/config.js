@@ -1,4 +1,4 @@
-module.exports = {
+﻿module.exports = {
     email: {
         subject: "Test",
         template: "doxybox-email",

@@ -1,4 +1,4 @@
-var io = require('socket.io');
+﻿var io = require('socket.io');
 
 var argv = require('optimist').argv,            // handles console arguments
     sys = require('util'),                      // used for system logs

@@ -4,14 +4,14 @@
 ], function (_, $, Backbone) {
     "use strict";
 
-    var SmarthomeViews = {};
+    var Views = {};
 
 
     var ItemBase = Backbone.View.extend({
 
         tagName: "div",
 
-        className: "devicelist-item-",
+        className: "foolist-item-",
         template: _.template('<p><%=name%></p>'),
 
         events: {
@@ -30,18 +30,18 @@
         }
     });
 
-    SmarthomeViews.SmallItem = ItemBase.extend({
-        className: "devicelist-item-small",
+    Views.SmallItem = ItemBase.extend({
+        className: "foolist-item-small",
         template: _.template('<p><%=name%></p>')
     });
 
-    SmarthomeViews.MiddleItem = ItemBase.extend({
-        className: "devicelist-item-middle",
+    Views.MiddleItem = ItemBase.extend({
+        className: "foolist-item-middle",
         template: _.template('<p><%=name%></p>')
     });
 
-    SmarthomeViews.LargeItem = ItemBase.extend({
-        className: "devicelist-item-large",
+    Views.LargeItem = ItemBase.extend({
+        className: "foolist-item-large",
         template: _.template('<p><%=name%></p>')
     });
 
@@ -49,10 +49,10 @@
 
         tagName: "div",
 
-        className: "devicelist-items-",
+        className: "foolist-items-",
         template: _.template(''),
         itemViews: {},
-        itemView: SmarthomeViews.SmallItem,
+        itemView: Views.SmallItem,
 
         events: {
 //            "click .icon": "open"
@@ -75,24 +75,24 @@
         }
     });
 
-    SmarthomeViews.SmallListItems = ItemsBase.extend({
-        className: "devicelist-items-small",
-        itemView: SmarthomeViews.SmallItem,
+    Views.SmallListItems = ItemsBase.extend({
+        className: "foolist-items-small",
+        itemView: Views.SmallItem,
         template: _.template('<h3>SMALL Items</h3>')
     });
 
-    SmarthomeViews.MiddleListItems = ItemsBase.extend({
-        className: "devicelist-items-middle",
-        itemView: SmarthomeViews.MiddleItem,
+    Views.MiddleListItems = ItemsBase.extend({
+        className: "foolist-items-middle",
+        itemView: Views.MiddleItem,
         template: _.template('<h3>MIDDLE Items</h3>')
     });
 
-    SmarthomeViews.LargeListItems = ItemsBase.extend({
-        className: "devicelist-items-large",
-        itemView: SmarthomeViews.LargeItem,
+    Views.LargeListItems = ItemsBase.extend({
+        className: "foolist-items-large",
+        itemView: Views.LargeItem,
         template: _.template('<h3>LARGE Items</h3>')
     });
 
-    return SmarthomeViews;
+    return Views;
 
 });
