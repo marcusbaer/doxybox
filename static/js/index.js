@@ -55,13 +55,13 @@
 
                     window.app = app = {};
 
-                    var socket = app.socket = io.connect( document.location.origin );
-                    socket.on('connect', function () {
-                        socket.emit('hello', {id: '123'});
-                        socket.on('hello', function (data) {
-                            console.log(data);
-                        });
-                    });
+//                    var socket = app.socket = io.connect( document.location.origin );
+//                    socket.on('connect', function () {
+//                        socket.emit('hello', {id: '123'});
+//                        socket.on('hello', function (data) {
+//                            console.log(data);
+//                        });
+//                    });
 
                 },
 

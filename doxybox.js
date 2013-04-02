@@ -8,7 +8,6 @@ var argv = require('optimist').argv,            // handles console arguments
     express = require('express'),               // the application server
     journey = require('journey'),               // handles all service routes
     app = module.exports = express(),
-//    http = require('http'),
     httpServer = require('http').createServer(app),
     io = io.listen(httpServer),
     services = require('./services/doxybox-services'); // handles all services
@@ -152,7 +151,7 @@ app.post('/uploads', function(req, res) {
 // REDIRECTS
 
 app.get('/', function(req, res){
-    res.redirect('login');
+    res.redirect('index');
 });
 
 // DIRECT TO SERVICES

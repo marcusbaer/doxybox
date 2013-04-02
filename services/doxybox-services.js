@@ -1,7 +1,7 @@
 ﻿var sys = require('util'),
     fs = require('fs'),
     childProcess = require('child_process'),
-    config = require("../config"),
+    config = require("./email-config"),
     Emailer = require("../lib/emailer"),
     _ = require('underscore')._,
     Backbone = require('backbone');
