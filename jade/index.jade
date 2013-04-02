@@ -1,0 +1,23 @@
+!!!
+html(lang="de")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width,initial-scale=1,maximum-scale=1")
+    link(rel='stylesheet/less', type='text/css', href='styles/main.less')
+    script(type='text/javascript', src='js/libs/socketio/socket.io.js')
+    script(type='text/javascript', src='js/libs/jquery/jquery.js')
+    script(type='text/javascript', src='js/libs/less/less-1.3.3.min.js')
+    script(type='text/javascript', src='js/jquery.index.js')
+    script(type='text/javascript', src='js/libs/require/require.js', data-main='js/index')
+  body
+    div#log
+    div#main
+        section#header
+        section#body
+        section#footer
+    script(type='text/javascript')
+        function log(val) {
+            $('#log').text(val);
+        }
