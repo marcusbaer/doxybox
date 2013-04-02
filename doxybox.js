@@ -1,6 +1,4 @@
-﻿var io = require('socket.io');
-
-var argv = require('optimist').argv,            // handles console arguments
+﻿var argv = require('optimist').argv,            // handles console arguments
     sys = require('util'),                      // used for system logs
 	fs = require('fs'),
     db = require('dirty')('data/doxybox.db'),	// simple key value storage
@@ -8,8 +6,8 @@ var argv = require('optimist').argv,            // handles console arguments
     express = require('express'),               // the application server
     journey = require('journey'),               // handles all service routes
     app = module.exports = express(),
-    httpServer = require('http').createServer(app),
-    io = io.listen(httpServer),
+    httpServer = http.createServer(app),
+    io = require('socket.io').listen(httpServer),
     services = require('./services/doxybox-services'); // handles all services
 
 io.set('log level', 1); // disables debugging. this is optional. you may remove it if desired.
@@ -23,8 +21,10 @@ var service = new(services.Service);
 
 io.sockets.on('connection', function (socket) {
 
-    socket.on('hello', function (params) { // this is used
+    socket.on('hello', function (params) {
         app.set('hello-id', params.id);
+        socket.emit('hello', params);
+        socket.broadcast.emit('hello', params);
     });
 
 });
@@ -171,8 +171,8 @@ app.post('/service/*', function(req, res){
 
 // START EXPRESS SERVER LISTENING ON PORT
 
-app.listen(app.get('port'));
-
+httpServer.listen(app.get('port'));
+//app.listen(app.get('port'));
 
 sys.log("Start DOXYBOX with environment " + app.get('env') + ' on port ' + app.get('port'));
 
