@@ -4,7 +4,7 @@
 	"description": "A Node.js development framework",
 	"homepage": "http://github.com/marcusbaer/doxybox",
     "keywords": ["document management", "web framework", "framework", "stylus"],
-	"author": "Marcus Baer <info@baer-media.com>",
+	"author": "Marcus Baer <kontakt@minamisoftware.com>",
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/marcusbaer/doxybox.git"
