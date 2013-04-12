@@ -1,14 +1,15 @@
 ﻿var argv = require('optimist').argv,            // handles console arguments
     sys = require('util'),                      // used for system logs
 	fs = require('fs'),
-    db = require('dirty')('data/doxybox.db'),	// simple key value storage
+	configuration = require('../../doxybox.configuration').main,	// configuration file for working as a library
+	db = require('dirty')(configuration.dirty || './data/doxybox.db'),	// simple key value storage
     http = require('http'),
     express = require('express'),               // the application server
     journey = require('journey'),               // handles all service routes
     app = module.exports = express(),
     httpServer = http.createServer(app),
     io = require('socket.io').listen(httpServer),
-    services = require('./services/doxybox-services'); // handles all services
+    services = require(configuration.services || './services/doxybox-services'); // handles all services
 
 io.set('log level', 1); // disables debugging. this is optional. you may remove it if desired.
 
@@ -32,9 +33,9 @@ io.sockets.on('connection', function (socket) {
 // SET SERVER VARIABLES
 
 app.set('env', argv.env || 'production');
-app.set('static', argv.static || './static');
+app.set('static', argv.static || configuration.static || './static');
 app.set('bin', argv.bin || './bin');
-app.set('port', argv.port || 80);
+app.set('port', argv.port || configuration.port || 80);
 
 service.set({
     env: app.get('env'),
@@ -45,8 +46,8 @@ service.set({
 // SET SERVER ENVIRONMENT
 
 app.configure(function () {
-    app.set('title', 'doxybox');
-    app.set('views', 'jade');
+    app.set('title', configuration.title || 'doxybox');
+    app.set('views', configuration.jade || 'jade');
     app.set('view engine', 'jade');
 });
 
