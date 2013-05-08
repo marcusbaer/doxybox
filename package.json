@@ -1,9 +1,9 @@
 ﻿{
 	"name": "doxybox",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A Node.js development framework",
 	"homepage": "http://github.com/marcusbaer/doxybox",
-    "keywords": ["document management", "web framework", "framework", "stylus"],
+    "keywords": ["document management", "web framework", "framework"],
 	"author": "Marcus Baer <info@baer-media.com>",
 	"repository": {
 		"type": "git",
@@ -30,11 +30,8 @@
 		"dirty": "~0.9.7",
 		"underscore": ">=1.4.4",
 		"backbone": ">=1.0.0",
-		"nodemailer": "~0.4.1",
 		"socket.io": ">=0.9.14",
-		"request": "~2.16.6",
-		"stylus": ">=0.32.1",
-		"node-sprite": ">=0.1.2"
+		"request": ">=2.16.6"
 	},
 	"bin": {
 		"doxybox": "./bin/doxybox"
