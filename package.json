@@ -1,6 +1,6 @@
 ﻿{
 	"name": "doxybox",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A Node.js development framework",
 	"homepage": "http://github.com/marcusbaer/doxybox",
     "keywords": ["document management", "web framework", "framework"],
